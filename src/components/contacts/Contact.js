@@ -5,7 +5,7 @@ import {
   TiArrowSortedUp,
   TiDeleteOutline,
 } from "react-icons/ti";
-import { Consumer } from "./context";
+import { Consumer } from "../context";
 
 class Contact extends Component {
   state = {
