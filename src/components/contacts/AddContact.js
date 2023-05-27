@@ -56,7 +56,7 @@ class AddContact extends Component {
       errors:{}
     });
 
-this.props.history.replace("/")
+
   };
 
   render() {
