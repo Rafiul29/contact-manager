@@ -2,20 +2,24 @@ import React, { Component } from "react";
 import { Consumer } from "../context";
 import { v4 as uuidv4 } from "uuid";
 import TextInputGroup from "../layout/TextInputGroup";
+
+
+
 class AddContact extends Component {
+
+
   state = {
     name: "",
     email: "",
     phone: "",
     errors:{}
   };
-
   //onchnage method reusable
   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   handleSubmit = (dispatch, e) => {
     e.preventDefault();
-
+   
     const { name, email, phone } = this.state;
 
     //check error
@@ -51,6 +55,8 @@ class AddContact extends Component {
       phone: "",
       errors:{}
     });
+
+this.props.history.replace("/")
   };
 
   render() {
@@ -95,11 +101,13 @@ class AddContact extends Component {
                     error={errors.phone}
                   />
                 
-                  <input
+       
+             <input
                     type="submit"
                     value="Add Contact"
                     className="btn btn-success btn-block py-2"
                   />
+      
                 </form>
               </div>
             </div>
@@ -109,5 +117,6 @@ class AddContact extends Component {
     );
   }
 }
+
 
 export default AddContact;
